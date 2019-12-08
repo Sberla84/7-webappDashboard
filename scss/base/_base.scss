@@ -10,7 +10,7 @@
 #main-container {
   display: grid;
 
-  grid-template-rows: 50px repeat(3, minmax(200px, 1fr)) 150px repeat(2, minmax(200px, 1fr)) ;
+  grid-template-rows: 50px repeat(3, minmax(200px, 1fr)) 150px repeat(3, minmax(200px, 1fr)) ;
   grid-template-columns: 60px 1fr;
   grid-template-areas: 
     "main-header main-header"
