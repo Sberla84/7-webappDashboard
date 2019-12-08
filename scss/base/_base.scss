@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+  }
+  
+
+
+
+  // GRID STYLE
+
+#main-container {
+  display: grid;
+
+  grid-template-rows: 50px repeat(3, minmax(200px, 1fr)) 150px repeat(2, minmax(200px, 1fr)) ;
+  grid-template-columns: 60px 1fr;
+  grid-template-areas: 
+    "main-header main-header"
+    "side-nav dashboard"
+    "side-nav daily-trafic"
+    "side-nav mobile-users"
+    "side-nav social-stats"
+    "side-nav new-members"
+    "side-nav recent-activity"
+    "side-nav message"
+    "side-nav settings"
+  ;
+}
+
+#main-header{
+  grid-area: main-header;
+  background-color: blue;
+}
+
+#side-nav{
+  grid-area: side-nav;
+  background-color: lightblue;
+}
+
+#dashboard{
+  grid-area: dashboard;
+  background-color: purple;
+}
+
+#daily-trafic{
+  grid-area: daily-trafic;
+  background-color: red;
+}
+
+#mobile-users{
+  grid-area: mobile-users;
+  background-color: green;
+}
+
+#social-stats{
+  grid-area: social-stats;
+  background-color: yellow;
+}
+
+#new-members{
+  grid-area: new-members;
+  background-color: orange;
+}
+
+#recent-activity{
+  grid-area: recent-activity;
+  background-color: pink;
+}
+
+#message{
+  grid-area: message;
+  background-color: brown;
+}
+
+#settings{
+  grid-area: settings;
+  background-color: grey;
+}
