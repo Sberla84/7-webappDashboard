@@ -1,8 +1,79 @@
 
 
 
+// DASHBOARD
+
+#dashboard {
+    border-bottom: 1px solid lightgrey;
+}
+
+.dashboard-header{
+    display:flex;
+    flex-wrap: wrap;
+    
+}
+
 .dashboard-chart{
     position:relative;
-    height:350px;
+    height:40vh;
     width: auto;
+    margin:auto;
 }
+
+#alert{
+    width: 100%;
+    margin: 5px 15px; 
+    border-radius:3px;
+    background-color: $purple;
+}
+
+#search-text{
+  margin-left:auto;  
+  width:auto;
+}
+
+#traffic{
+    display: flex;
+    width:100%;
+}
+
+.traffic-buttons{
+    margin-left:auto;
+    margin-right:3vw;
+}
+
+.buttons {
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 15px;
+}
+
+.normal{
+    background-color: white;
+    color:black;
+    cursor: pointer;
+   
+}
+
+.buttons:hover{
+    cursor: pointer;
+}
+
+.clicked {
+    background-color: lightgreen;
+    color:white;
+    cursor: pointer;
+}
+
+.alerts {
+    margin-left: 10px;
+    color: white;
+    display: inline-block;
+}
+
+#close-x{
+    text-align: end;
+    display: inline-block;
+    float: right;
+    margin-right: 15px;
+  }

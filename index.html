@@ -27,9 +27,20 @@
         </div>
 
         <div id="dashboard">
-
-                dashboard
-
+            <div class="dashboard-header">
+                <p >Dashboard</p>
+                <div id="search-text"><input type="text"></div>
+                <div id="alert"><p  class="alerts"><strong>Alert </strong>   Messaggio alert!!!!!!</p><p id="close-x">X</p></div>
+                <div id="traffic" class="traffic">
+                    <p>TRAFFIC</p>
+                      <ul class="traffic-buttons">
+                            <li class="buttons">Hourly</li>
+                            <li class="buttons">Daily</li>
+                            <li class="buttons clicked">Weekly</li>
+                            <li class="buttons">Montly</li>
+                      </ul>
+                </div>
+            </div>    
             <div class="dashboard-chart">
                 <canvas id="myChart"></canvas>
             </div>
