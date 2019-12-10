@@ -1,5 +1,98 @@
 
+//HEADER
 
+#main-header {
+    display:flex;
+    background-color: $purple;
+}
+
+#main-header p{ 
+    display: block;
+    color: white;
+    margin-left: 10px;
+}
+
+.bell{
+    margin-left:auto;
+    width:30px;
+    height:30px;
+    margin-top:10px;
+}
+
+.line {
+    width:1px;
+    background-color: grey;
+    height:40px;
+    display:block;
+    margin: 5px;
+    position:relative;
+
+}
+
+
+.profile-image {
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    margin-top:12.5px;
+}
+
+.profile-name{
+    display:block;
+    margin-right:15px;
+}
+
+//SVG ANIMATION BELL
+
+.bell-svg{
+    display:block;
+    margin:5px auto;
+    width:20px;
+    height:20px;
+    cursor:pointer;
+    transition: transform .4s ease-out;
+}
+
+.bell-svg:hover{
+    transform:scale(1.2);
+}
+
+// BELL ALERT BOX
+
+#alert-box{
+    display:none;
+    position:fixed;
+    top:50px;
+    left:70px;
+    width: 240px;
+    background-color: rgba(226,227,246,1);
+    -moz-box-shadow: 0 0 5px grey;
+	 -webkit-box-shadow:0 0 5px grey;
+    box-shadow:0 0 5px grey;
+    
+}
+
+#alert-box p span{
+    float:right;
+    font-size:16px;
+    cursor:pointer;
+}
+
+#alert-box p{
+    font-size:14px;
+    padding: 15px 0;
+    margin: 0px 5px;
+    border-bottom: 1px solid lightgrey;
+}
+
+#alert-box p:last-child{
+    border-bottom:none;
+}
+
+
+.Bell-circle-hide{
+    display:none;
+}
 
 // DASHBOARD
 
@@ -10,15 +103,9 @@
 .dashboard-header{
     display:flex;
     flex-wrap: wrap;
-    
 }
 
-.dashboard-chart{
-    position:relative;
-    height:40vh;
-    width: auto;
-    margin:auto;
-}
+//DASHBOARD ALERT
 
 #alert{
     width: 100%;
@@ -27,22 +114,89 @@
     background-color: $purple;
 }
 
-#search-text{
-  margin-left:auto;  
-  width:auto;
+.alerts {
+    margin: 10px 0 10px 10px;
+    color: white;
+    display: inline-block;
 }
+
+#close-x{
+    color:white;
+    text-align: end;
+    display: inline-block;
+    float: right;
+    margin: 10px 15px 10px 0;
+    cursor: pointer;
+  }
+
+
+// DASHBOARD SEARCH
+
+.dashboard-search {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.dashboard-search p{ 
+    margin-left: 15px; 
+    margin-right: 15px;
+}
+
+
+
+#search-text{
+  height: 50px;
+  border-bottom: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  width:80%;
+}
+
+#search-text input{
+    padding: 5px 10px;
+    display:block;
+    margin: 10px 15px auto auto;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    width: calc(100vw - 190px);
+    max-width: 350px;
+}
+
+
+
+
+// DASHBOARD CHART//
+.dashboard-chart{
+    position:relative;
+    height:40vh;
+    width: calc(100vw - 60px);
+    margin:auto;
+    margin-top: 20px;
+}
+
 
 #traffic{
     display: flex;
+    flex-direction: column;         //METTERE ROW PER VIEWPORT GRANDI
     width:100%;
 }
 
+.traffic p{
+    margin-left: auto;              // TOGLIERE MARGINI PER WL
+    margin-right:auto;
+}
+
 .traffic-buttons{
-    margin-left:auto;
-    margin-right:3vw;
+    padding: 0;
+    margin: auto;
+    // @madia 
+    // margin-left:auto;
+    // margin-right:3vw;
 }
 
 .buttons {
+    font-size: 14px;
     padding: 5px 10px;
     display: inline-block;
     border-radius: 15px;
@@ -65,15 +219,104 @@
     cursor: pointer;
 }
 
-.alerts {
-    margin-left: 10px;
-    color: white;
-    display: inline-block;
+// TRAFFIC CHART 
+
+.daily-traffic-chart{
+    position:relative;
+    height:40vh;
+    width: calc(100vw - 60px);
+    margin:auto;
+    margin-top: 20px;
 }
 
-#close-x{
-    text-align: end;
-    display: inline-block;
-    float: right;
-    margin-right: 15px;
-  }
+// MOBILE USERS CHART
+
+.mobile-users-chart{
+    position:relative;
+    height:40vh;
+    width: calc(100vw - 60px);
+    margin:auto;
+    margin-top: 20px;
+}
+
+// SOCIAL STATS
+
+.social-box{
+    display:flex;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    width:220px;
+    height:40px;
+    margin: 5px auto;
+}
+
+.twitter,
+.facebook,
+.google {
+    background-color: $purple;
+    margin:7px;
+    width:10px;
+    height:10px;
+}
+
+.social-circle{
+    margin: 8px 4px 8px 4px;
+    border-radius:50%;
+    background-color: $purple;
+    width:24px;
+    height:24px;
+}
+.social-container{
+    display:flex;
+    flex-direction: column;
+    margin:5px auto;
+    //@media
+    // flex-direction: row;
+    // justify-content: space-evenly;
+}
+
+.social-stats{  
+    display:flex;
+    width:100%;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.social-name{
+    font-size: 14px;
+    color: $purple;
+    margin: 17.5px auto 6.5px auto; 
+}
+.stat {
+    display:block;
+    font-size: 24px;
+    margin:6.5px 8px 6.5px auto;
+}
+
+
+// NEW MEMBERS
+
+#member-img img{
+    margin:5px;
+    grid-area: member-img;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+#member-name{
+    grid-area:member-name;
+    font-size:11px;
+}
+
+#member-mail{
+    grid-area:member-mail;
+    font-size:9px;
+    color: $purple;
+}
+
+#member-date{
+    font-size: 11px;
+    margin: 14.5px auto;
+    color: grey;
+}

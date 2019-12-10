@@ -3,6 +3,10 @@
   }
   
 
+body{
+  font-family: $roboto;
+}
+
 
 
   // GRID STYLE
@@ -10,8 +14,8 @@
 #main-container {
   display: grid;
 
-  grid-template-rows: 50px repeat(3, minmax(200px, auto)) 150px repeat(3, minmax(200px, 1fr)) ;
-  grid-template-columns: 60px 1fr;
+  grid-template-rows: 50px repeat(3, minmax(200px, auto)) 180px repeat(3, minmax(200px, 1fr)) ;
+  grid-template-columns: 60px auto;
   grid-template-areas: 
     "main-header main-header"
     "side-nav dashboard"
@@ -47,17 +51,17 @@
 
 #mobile-users{
   grid-area: mobile-users;
-  background-color: green;
+  background-color: white;
 }
 
 #social-stats{
   grid-area: social-stats;
-  background-color: yellow;
+  background-color: white;
 }
 
 #new-members{
   grid-area: new-members;
-  background-color: orange;
+  background-color: white;
 }
 
 #recent-activity{
@@ -73,4 +77,16 @@
 #settings{
   grid-area: settings;
   background-color: grey;
+}
+
+
+// MEMBERS GRIDS
+
+#new-member {
+  display: grid;
+  grid-template-rows: 20px 20px;
+  grid-template-columns: 40px 1fr 60px;
+  grid-template-areas: 
+  "member-img member-name member-date"
+  "member-img member-mail member-date";
 }

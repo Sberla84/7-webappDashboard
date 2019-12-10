@@ -106,7 +106,87 @@ $(document).ready(function(){
         });
 });
 
+// TRAFFIC CHART
+
+var tchart = document.getElementById('mytrafficChart');
+
+var myChart = new Chart(tchart, {
+    type: 'bar',
+    data: {
+        labels: ['S', 'M', 'T', 'W', 'T', 'F','S'],
+        datasets: [{
+            data: [75, 100, 175, 125, 225, 200, 100],
+            backgroundColor: 'rgba(116, 119, 191, 1)',
+            barThickness: 'flex' ,
+        }]
+    },
+    options: {
+        maintainAspectRatio:false,
+    legend: {
+        display: false,
+    },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+
+// USERS CHART
+
+var uchart = document.getElementById('myusersChart');
+
+var myChart = new Chart(uchart, {
+    type: 'pie',
+    data: {
+        labels: ['Phones', 'Tablets', 'Desktop'],
+        datasets: [{
+            data: [13, 17, 70],
+            backgroundColor: [
+            'rgba(116, 119, 191, 1)',
+            'rgba(129, 201, 143, 1)',
+            'rgba(116, 177, 191, 1)'                                     
+        ]
+            
+        }]
+    },
+    options: {
+        maintainAspectRatio:false,
+        legend: {
+            display:true,
+            position: 'right',
+        },
+        
+    }
+});
+
+//  ALERT BOX AND BELL ANIMATIONS
 
 
-// 
 
+$(document).ready(function(){
+    $('.bell').click(function(){
+        $('#alert-box').slideDown();
+    });
+    $('#alert-box p span').click(function(){
+        $(this).parent().slideUp(500, function(){
+            $(this).remove();
+            if ($('#alert-box').children().length === 0){
+                $('.bell-green-circle').addClass('Bell-circle-hide');
+            }
+        });
+         
+    });
+    
+});
+
+// ALERT ANIMATION
+
+$(document).ready(function(){
+    $('#close-x').click(function(){
+        $(this).parent().fadeOut();
+    });
+});
