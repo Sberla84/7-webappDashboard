@@ -7,15 +7,22 @@ body{
   font-family: $roboto;
 }
 
+a{
+  text-decoration: none;
 
+}
+
+h2{
+  font-size:12px;
+  margin: 15px;
+}
 
   // GRID STYLE
 
 #main-container {
   display: grid;
-
-  grid-template-rows: 50px repeat(3, minmax(200px, auto)) 180px repeat(3, minmax(200px, 1fr)) ;
-  grid-template-columns: 60px auto;
+  grid-template-rows: 50px repeat(3, minmax(200px, auto)) auto repeat(4, minmax(200px, 1fr)) ;
+  grid-template-columns: 60px 1fr;
   grid-template-areas: 
     "main-header main-header"
     "side-nav dashboard"
@@ -27,56 +34,79 @@ body{
     "side-nav message"
     "side-nav settings"
   ;
+  @include mq{
+    grid-template-rows: 50px repeat(2, minmax(200px, auto)) auto repeat(2, minmax(200px, 1fr)) ;
+    grid-template-columns: 60px 1fr 1fr;
+    grid-template-areas: 
+    "main-header main-header main-header"
+    "side-nav dashboard dashboard"
+    "side-nav daily-trafic mobile-users"
+    "side-nav social-stats social-stats"
+    "side-nav new-members recent-activity"
+    "side-nav message settings"
+  ;
+  }
+  @include mql{
+    max-width: 1024px;
+    margin:0 auto;
+  }
 }
 
 #main-header{
   grid-area: main-header;
-  background-color: blue;
 }
 
 #side-nav{
   grid-area: side-nav;
-  background-color: lightblue;
+  background-color: #4d4c72;
 }
 
 #dashboard{
   grid-area: dashboard;
-  background-color: white;
+ border-bottom: 1px solid lightgrey;
 }
 
 #daily-trafic{
   grid-area: daily-trafic;
-  background-color:white;
+  border-bottom: 1px solid lightgrey;
 }
 
 #mobile-users{
   grid-area: mobile-users;
-  background-color: white;
+  border-bottom: 1px solid lightgrey;
+  @include mq{
+    border-left: 1px solid lightgrey;
+  }
 }
 
 #social-stats{
   grid-area: social-stats;
-  background-color: white;
+  border-bottom: 1px solid lightgrey;
 }
 
 #new-members{
   grid-area: new-members;
-  background-color: white;
+  border-bottom: 1px solid lightgrey;
 }
 
 #recent-activity{
   grid-area: recent-activity;
-  background-color: pink;
+  border-bottom: 1px solid lightgrey;
+  @include mq{
+    border-left: 1px solid lightgrey;
+  }
 }
 
 #message{
   grid-area: message;
-  background-color: brown;
+  border-bottom: 1px solid lightgrey;
 }
 
 #settings{
   grid-area: settings;
-  background-color: grey;
+  @include mq{
+    border-left: 1px solid lightgrey;
+  }
 }
 
 
@@ -89,4 +119,24 @@ body{
   grid-template-areas: 
   "member-img member-name member-date"
   "member-img member-mail member-date";
+  @include mq{
+    grid-template-rows: 30px 30px;
+    grid-template-columns: 60px auto 90px;
+  }
+}
+
+
+// RECENT ACTIVITY
+
+#activity {
+  display: grid;
+  grid-template-rows:30px 20px;
+  grid-template-columns: 40px 1fr 20px;
+  grid-template-areas: 
+  "member-img member-msg arrow"
+  "member-img member-time arrow";
+  @include mq{
+    grid-template-rows: 30px 30px;
+    grid-template-columns: 60px 1fr 20px;
+  }
 }

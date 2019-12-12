@@ -1,2 +1,29 @@
 
+.side-nav{
+    display:flex;
+    flex-direction: column;
+}   
 
+
+.nav-ico{
+    width:30px;
+    margin: 15px 15px 15px 15px;
+    cursor:pointer;
+}
+
+.ico-nav{
+    fill:grey;
+}
+
+.ico-clicked{
+    fill:white;
+}
+
+// .side-bar-green{
+//     width:3px;
+//     background-color: grey;
+//     height:30px;
+//     display:block;
+//     margin: 5px 5px 5px 5px;
+//     position:relative;
+// }

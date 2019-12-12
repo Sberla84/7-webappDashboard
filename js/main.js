@@ -190,3 +190,82 @@ $(document).ready(function(){
         $(this).parent().fadeOut();
     });
 });
+
+// MESSAGE WIDGET
+$( "#autocomplete" ).autocomplete({
+    source: [ "Victoria Chambers", "Dale Byrd", "Dawn Wood", "Dan Oliver"]
+  });
+
+$(document).ready(function(){
+    $('.button-send').click(function(e){
+        e.preventDefault();
+        // let $name = $('.search-name').val();
+        // let $message = $('.textarea_style').val();
+        if ($('.search-name').val() ===  "" && $('.textarea_style').val() === "" ){
+            alert("You have to complete both fields");
+        }
+         else if ($('.search-name').val() === "" && $('.textarea_style').val() != ""){
+            alert("You have to add a name");
+        }
+        else if ($('.search-name').val() != "" && $('.textarea_style').val() === ""){
+            alert("You have to add a message");
+        }
+        else {
+            alert("Your message to " + $('.search-name').val() + " has been sent!");
+        };
+    });
+});
+
+// LOCAL STORAGE
+
+
+$(document).ready(function(){
+
+    $(".button-save").click(function(){
+    localStorage.setItem("email", $("#email").is(':checked'));
+
+    localStorage.setItem("public", $("#public").is(':checked'));
+
+ });
+});
+
+function load(){    
+    var checkedmail = JSON.parse(localStorage.getItem('email'));
+    var checkedpublic = JSON.parse(localStorage.getItem('public'));
+    document.getElementById('email').checked = checkedmail;
+    document.getElementById('public').checked = checkedpublic;
+}
+
+$(document).ready(function(){
+
+    $(".button-cancel").click(function(){
+
+    localStorage.removeItem("email");
+    localStorage.removeItem("public");
+    localStorage.removeItem("timezone");
+
+    document.getElementById('email').checked = false;
+    document.getElementById('public').checked = false;
+    $('#timezone').val("");
+   });
+});
+
+load();
+
+$(function() {
+    $('#timezone').change(function() {
+        localStorage.setItem('timezone', this.value);
+    });
+    if(localStorage.getItem('timezone')){
+        $('#timezone').val(localStorage.getItem('timezone'));
+    }
+});
+
+// NAVIGATION FUNCTIONS
+
+$(document).ready(function(){
+    $('.navi').click(function(){
+        $('.ico-nav').removeClass('ico-clicked');
+        $(this).find('path').addClass('ico-clicked');
+    });
+});

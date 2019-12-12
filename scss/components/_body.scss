@@ -112,12 +112,19 @@
     margin: 5px 15px; 
     border-radius:3px;
     background-color: $purple;
+    height: 40px;
+    @include mq{
+        height:50px;
+    }
 }
 
 .alerts {
     margin: 10px 0 10px 10px;
     color: white;
     display: inline-block;
+    @include mq{
+        margin: 17px 0 17px 10px;
+    }
 }
 
 #close-x{
@@ -160,7 +167,7 @@
     border: 1px solid lightgrey;
     border-radius: 5px;
     width: calc(100vw - 190px);
-    max-width: 350px;
+    max-width: 450px;
 }
 
 
@@ -173,6 +180,9 @@
     width: calc(100vw - 60px);
     margin:auto;
     margin-top: 20px;
+    @include mq{
+        width: 100%;
+    }
 }
 
 
@@ -227,6 +237,9 @@
     width: calc(100vw - 60px);
     margin:auto;
     margin-top: 20px;
+    @include mq{
+        width: 100%;
+    }
 }
 
 // MOBILE USERS CHART
@@ -237,6 +250,9 @@
     width: calc(100vw - 60px);
     margin:auto;
     margin-top: 20px;
+    @include mq{
+        width: 100%;
+    }
 }
 
 // SOCIAL STATS
@@ -248,15 +264,24 @@
     width:220px;
     height:40px;
     margin: 5px auto;
+    @include mq{
+        width:320px;
+        height:100px;
+    }
 }
 
 .twitter,
 .facebook,
 .google {
     background-color: $purple;
-    margin:7px;
+    margin:8px;
     width:10px;
     height:10px;
+    @include mq {
+        margin:17.5px;
+        width:25px;
+        height:25px;
+    }
 }
 
 .social-circle{
@@ -265,14 +290,20 @@
     background-color: $purple;
     width:24px;
     height:24px;
+    @include mq{
+        width: 60px;
+        height:60px;
+        margin: 20px 4px 20px 15px;
+    }
 }
 .social-container{
     display:flex;
     flex-direction: column;
     margin:5px auto;
-    //@media
-    // flex-direction: row;
-    // justify-content: space-evenly;
+    @include mq{
+     flex-direction: row;
+     justify-content: space-evenly;
+    }
 }
 
 .social-stats{  
@@ -280,6 +311,11 @@
     width:100%;
     flex-direction: row;
     justify-content: space-between;
+    @include mq{
+        flex-direction: column;
+        width:auto;
+        justify-content: space-around;
+    }
     
 }
 
@@ -287,11 +323,19 @@
     font-size: 14px;
     color: $purple;
     margin: 17.5px auto 6.5px auto; 
+    @include mq{
+        font-size: 18px;
+        margin: 17.5px auto 6.5px 22px; 
+    }
 }
 .stat {
     display:block;
     font-size: 24px;
     margin:6.5px 8px 6.5px auto;
+    @include mq{
+        font-size: 40px;
+        margin:0px auto 6.5px 20px;
+    }
 }
 
 
@@ -303,20 +347,307 @@
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    @include mq{
+    width: 50px;
+    height: 50px;
+    }
 }
 #member-name{
     grid-area:member-name;
     font-size:11px;
+    @include mq{
+        font-size:19px;
+        margin-right: 10px;
+        margin: 10px auto 0 10px
+    }
 }
 
 #member-mail{
     grid-area:member-mail;
     font-size:9px;
     color: $purple;
+    border-bottom: 1px solid lightgrey;
+    @include mq{
+        font-size:12px;
+        margin-left: 10px;
+        margin-top:5px;
+    }
 }
 
 #member-date{
     font-size: 11px;
     margin: 14.5px auto;
     color: grey;
+    @include mq{
+        font-size:19px;
+        margin-right: 10px;
+        margin-top: 20px;
+    }
 }
+
+// RECENT ACTIVITY
+
+#member-msg{
+    margin:5px 5px 0 5px;
+    grid-area:member-msg;
+    font-size:11px;
+    @include mq{
+        font-size:14px;
+        margin-right: 10px;
+        margin: 10px auto 0 10px
+    }
+}
+
+#member-time{
+    margin-left:5px;
+    grid-area: member-time;
+    font-size:9px;
+    border-bottom: 1px solid lightgrey;
+    @include mq{
+        font-size:12px;
+        margin-left: 10px;
+        margin-top:5px;
+    }
+}
+
+#arrow {
+    grid-area: arrow;
+    font-size: 24px;
+    color: $purple;
+    margin-top: 13px;
+    @include mq{
+        margin-right: 10px;
+        margin-top: 20px;
+    }
+}
+
+// MESSAGE USERS
+
+.form-container{
+    display:flex;
+    flex-direction:column;
+    margin: 15px auto;;
+}
+
+.form-container input{
+    padding: 5px 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 15px;
+   
+}
+
+
+.textarea_style {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    height: 100px;
+    outline: 0;
+    resize:none;
+    margin: 0 15px;
+    border: 1px solid lightgrey;
+  }
+
+  .button-send{
+    color:white;
+    padding: 5px 10px;
+    background-color: $purple;
+    border-radius:5px;
+    margin: 10px 15px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+    cursor: pointer;
+    background-color:white;
+    list-style: none;
+    -moz-box-shadow: 0 0 5px grey;
+	 -webkit-box-shadow:0 0 5px grey;
+    box-shadow:0 0 5px grey;
+}
+.ui-autocomplete li{
+    padding:5px 0;
+}
+.ui-helper-hidden-accessible{
+    display:none !important;
+}
+
+
+
+
+// SETTINGS
+
+
+#settings{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+select{
+    width:90%;
+    margin:20px auto;
+}
+
+.notifications-button,
+.profile-button{
+ display:block;
+ margin: 0 auto;
+}
+
+#settings p{
+    margin: 16px auto;
+}
+
+//SETTINGS --> BUTTONS
+
+.tgl {
+
+    position: relative;
+    outline: 0;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    margin: 0 0 5px 0;
+  
+    // add default box-sizing for this scope
+    &, &:after, &:before,
+    & *, & *:after, & *:before,
+    & + .tgl-btn {
+      box-sizing: border-box;
+      &::selection{
+        background: none;
+      }
+    }
+  
+    span {
+      position: relative;
+      display: block;
+      height: 1.8em;
+      width: 80px;
+      line-height: 1.2em;
+      overflow: hidden;
+      font-weight: normal;
+      text-align: center;
+      border-radius: 2em;
+      padding: 0.2em 1em;
+      border: 1px solid darken($toggle-enabled-tab-bg, 2);
+    //   box-shadow:
+    //   inset 0 2px 0 rgba(0,0,0,.2),
+    //   0 2px 0 rgba(255,255,255,0.7);
+  
+      transition:
+        color 0.3s ease,
+        padding 0.3s ease-in-out,
+        background 0.3s ease-in-out;
+  
+      &:before {
+        position: relative;
+        display: block;
+        line-height: 1.3em;
+        padding: 0 0.2em;
+        font-size: 1em;
+      }
+  
+      &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        border-radius: 2em;
+        width: 1.3em;
+        height: 1.3em;
+        margin-left: -1.45em;
+        top: 0.2em;
+        background: $toggle-enabled-tab-bg;
+        transition:
+          left 0.3s cubic-bezier( 0.175, 0.885, 0.320, 0.97 ),
+          background 0.3s ease-in-out;  
+  
+      }
+  
+    }
+  
+    input[type="checkbox"]{
+  
+      display: none !important;
+  
+      // Off
+      &:not(:checked) {
+        + span {
+          background: $purple;
+          color: $toggle-disabled-color;
+          padding-left: 1.6em;
+          padding-right: 0.4em;
+          &:before {
+            content: attr(data-off);
+            color: $toggle-disabled-color;
+          }
+          &:after {
+            background: $toggle-disabled-tab-bg;
+            left: 1.6em;
+          }
+        }
+      }
+  
+      // On
+      &:checked {
+        + span {
+          background: $purple;
+          color: $toggle-enabled-color;
+          padding-left: 0.4em;
+          padding-right: 1.6em;
+          &:before {
+            content: attr(data-on);
+          }
+          &:after {
+            background: $toggle-enabled-tab-bg;
+            left: 100%;
+          }
+        }
+      }
+      
+      // Disabled
+      &:disabled, &:disabled + span, &:read-only, &:read-only + span {
+        cursor: not-allowed;
+      }
+  
+    }
+  
+  }
+
+
+  .settings-confirms{
+      display:flex;
+      flex-direction: row; 
+      justify-content: center;
+  }
+
+  .button-save,
+  .button-cancel{
+    width: 80px;
+    color:white;
+    padding: 5px 10px;
+    border-radius:5px;
+    border: none;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.button-save{
+    background-color: $purple;
+}
+
+.button-cancel{
+    background-color: grey;    
+}
+
+.button-save:hover,
+.button-cancel:hover{
+    opacity: 0.66 ;
+}
+
