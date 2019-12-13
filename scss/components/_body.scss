@@ -61,14 +61,17 @@
 
 #alert-box{
     display:none;
-    position:fixed;
+    position: absolute;
     top:50px;
-    left:70px;
+    right:15px ;
     width: 240px;
     background-color: rgba(226,227,246,1);
     -moz-box-shadow: 0 0 5px grey;
 	 -webkit-box-shadow:0 0 5px grey;
     box-shadow:0 0 5px grey;
+    @include mql{
+        right: calc((100vw - 1000px)/2);
+    }
     
 }
 
@@ -341,6 +344,11 @@
 
 // NEW MEMBERS
 
+
+.new-members div:last-child{
+    border-bottom:none;
+}
+
 #member-img img{
     margin:5px;
     grid-area: member-img;
@@ -387,6 +395,11 @@
 
 // RECENT ACTIVITY
 
+#recent-activity div:last-child{
+    border-bottom:none;
+}
+
+
 #member-msg{
     margin:5px 5px 0 5px;
     grid-area:member-msg;
@@ -426,7 +439,7 @@
 .form-container{
     display:flex;
     flex-direction:column;
-    margin: 15px auto;;
+    margin: 15px auto 0 auto;
 }
 
 .form-container input{
@@ -447,6 +460,10 @@
     resize:none;
     margin: 0 15px;
     border: 1px solid lightgrey;
+        @include mq{
+            height:150px;
+            margin-bottom: 15px;
+        }
   }
 
   .button-send{
@@ -487,6 +504,16 @@
     display:flex;
     flex-direction: column;
     justify-content: space-around;
+    @include mq{
+        flex-direction:row;
+        flex-wrap: wrap;
+    }
+}
+
+#settings h2{
+    @include mq{
+    width:100%;
+    }
 }
 
 select{
@@ -498,10 +525,16 @@ select{
 .profile-button{
  display:block;
  margin: 0 auto;
+ @include mq{
+    margin-top:10px;
+}
 }
 
 #settings p{
     margin: 16px auto;
+    @include mq{
+        width: 50%;
+    }
 }
 
 //SETTINGS --> BUTTONS

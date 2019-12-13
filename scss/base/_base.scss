@@ -21,7 +21,7 @@ h2{
 
 #main-container {
   display: grid;
-  grid-template-rows: 50px repeat(3, minmax(200px, auto)) auto repeat(4, minmax(200px, 1fr)) ;
+  grid-template-rows: 50px repeat(3, minmax(200px, auto)) auto repeat(4, minmax(200px, auto)) ;
   grid-template-columns: 60px 1fr;
   grid-template-areas: 
     "main-header main-header"
@@ -112,7 +112,7 @@ h2{
 
 // MEMBERS GRIDS
 
-#new-member {
+.new-member {
   display: grid;
   grid-template-rows: 20px 20px;
   grid-template-columns: 40px 1fr 60px;
