@@ -69,10 +69,6 @@
     -moz-box-shadow: 0 0 5px grey;
 	 -webkit-box-shadow:0 0 5px grey;
     box-shadow:0 0 5px grey;
-    @include mql{
-        right: calc((100vw - 1000px)/2);
-    }
-    
 }
 
 #alert-box p span{
@@ -169,7 +165,7 @@
     margin: 10px 15px auto auto;
     border: 1px solid lightgrey;
     border-radius: 5px;
-    width: calc(100vw - 190px);
+    width: calc(100vw - 230px);
     max-width: 450px;
 }
 
@@ -180,12 +176,9 @@
 .dashboard-chart{
     position:relative;
     height:40vh;
-    width: calc(100vw - 60px);
+    width: 85vw;
     margin:auto;
     margin-top: 20px;
-    @include mq{
-        width: 100%;
-    }
 }
 
 
@@ -237,11 +230,11 @@
 .daily-traffic-chart{
     position:relative;
     height:40vh;
-    width: calc(100vw - 60px);
+    width: 85vw;
     margin:auto;
     margin-top: 20px;
     @include mq{
-        width: 100%;
+        width: 42vw;
     }
 }
 
@@ -250,11 +243,11 @@
 .mobile-users-chart{
     position:relative;
     height:40vh;
-    width: calc(100vw - 60px);
+    width: 85vw;
     margin:auto;
     margin-top: 20px;
     @include mq{
-        width: 100%;
+        width: 42vw;
     }
 }
 
@@ -375,10 +368,10 @@
     font-size:9px;
     color: $purple;
     border-bottom: 1px solid lightgrey;
+    margin-top:5px;
     @include mq{
         font-size:12px;
-        margin-left: 10px;
-        margin-top:5px;
+        margin-left: 10px; 
     }
 }
 
@@ -417,6 +410,7 @@
     font-size:9px;
     border-bottom: 1px solid lightgrey;
     @include mq{
+        padding-top:10px;
         font-size:12px;
         margin-left: 10px;
         margin-top:5px;
@@ -670,6 +664,10 @@ select{
     margin: 10px;
     text-align: center;
     cursor: pointer;
+    @include mq{
+        height: 28px;
+        margin-top:auto;
+    }
 }
 .button-save{
     background-color: $purple;

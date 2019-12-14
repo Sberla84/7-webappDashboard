@@ -223,8 +223,8 @@ $(document).ready(function(){
 
     $(".button-save").click(function(){
     localStorage.setItem("email", $("#email").is(':checked'));
-
     localStorage.setItem("public", $("#public").is(':checked'));
+    localStorage.setItem("timezone", $('#timezone').val());
 
  });
 });
@@ -234,6 +234,7 @@ function load(){
     var checkedpublic = JSON.parse(localStorage.getItem('public'));
     document.getElementById('email').checked = checkedmail;
     document.getElementById('public').checked = checkedpublic;
+    $('#timezone').val(localStorage.getItem('timezone'));
 }
 
 $(document).ready(function(){
@@ -252,14 +253,6 @@ $(document).ready(function(){
 
 load();
 
-$(function() {
-    $('#timezone').change(function() {
-        localStorage.setItem('timezone', this.value);
-    });
-    if(localStorage.getItem('timezone')){
-        $('#timezone').val(localStorage.getItem('timezone'));
-    }
-});
 
 // NAVIGATION FUNCTIONS
 
