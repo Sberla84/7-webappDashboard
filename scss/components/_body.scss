@@ -338,8 +338,11 @@
 // NEW MEMBERS
 
 
-.new-members div:last-child{
-    border-bottom:none;
+#new-members {
+    @include mql{
+    padding-left:30px;
+    padding-right: 30px;
+}
 }
 
 #member-img img{
@@ -388,10 +391,12 @@
 
 // RECENT ACTIVITY
 
-#recent-activity div:last-child{
-    border-bottom:none;
+#recent-activity {
+    @include mql{
+    padding-left:30px;
+    padding-right: 30px;
 }
-
+}
 
 #member-msg{
     margin:5px 5px 0 5px;
